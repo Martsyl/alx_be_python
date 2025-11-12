@@ -7,15 +7,15 @@ match priority:
         if time_bound == "yes":
             priority_message = f"Reminder: '{task}' is a high priority task that requires immediate attention today!"
         else:
-            priority_message = f"Reminder: '{task}' is a high priority task."
+            priority_message = f"Reminder: '{task}' is a high priority task. Consider completing it when you have free time."
     case "medium":
         if time_bound == "yes":
-            priority_message = f"Reminder: '{task}' is a medium priority task that should be completed soon."
+            priority_message = f"Reminder: '{task}' is a medium priority task that requires immediate attention today!"
         else:
-            priority_message = f"Reminder: '{task}' is a medium priority task."
+            priority_message = f"Reminder: '{task}' is a medium priority task. Consider completing it when you have free time."
     case "low":
         if time_bound == "yes":
-            priority_message = f"Reminder: '{task}' is a low priority task but has a time constraint."
+            priority_message = f"Reminder: '{task}' is a low priority task that requires immediate attention today!"
         else:
             priority_message = f"Reminder: '{task}' is a low priority task. Consider completing it when you have free time."
 
