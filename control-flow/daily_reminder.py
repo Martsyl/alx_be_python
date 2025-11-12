@@ -18,5 +18,7 @@ match priority:
             priority_message = f"Reminder: '{task}' is a {priority} task that requires immediate attention today!"
         else:
             priority_message = f"Reminder: '{task}' is a {priority} task. Consider completing it when you have free time."
+    case _:
+        priority_message = "Error: Invalid priority level entered."
 
 print(priority_message)
