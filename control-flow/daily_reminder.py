@@ -1,24 +1,31 @@
-task = input("Enter your task: ")
-priority = input("Priority (high/medium/low): ")
-time_bound = input("Is it time-bound? (yes/no): ") 
+# daily_reminder.py
 
-match priority:
-    case "high":
-        if time_bound == "yes":
-            priority_message = f"Reminder: '{task}' is a {priority} priority task that requires immediate attention today!"
-        else:
-            priority_message = f"Reminder: '{task}' is a {priority} priority task. Consider completing it when you have free time."
-    case "medium":
-        if time_bound == "yes":
-            priority_message = f"Reminder: '{task}' is a {priority} priority task that requires immediate attention today!"
-        else:
-            priority_message = f"Reminder: '{task}' is a {priority} priority task. Consider completing it when you have free time."
-    case "low":
-        if time_bound == "yes":
-            priority_message = f"Reminder: '{task}' is a {priority} task that requires immediate attention today!"
-        else:
-            priority_message = f"Reminder: '{task}' is a {priority} task. Consider completing it when you have free time."
-    case _:
-        priority_message = "Error: Invalid priority level entered."
+# This program reminds the user about a single, priority task for the day
 
-print(priority_message)
+while True:
+    # Step 1: Prompt for a single task
+    task = input("Enter your task: ").strip()
+    priority = input("Priority (high/medium/low): ").lower().strip()
+    time_bound = input("Is it time-bound? (yes/no): ").lower().strip()
+
+    print()  # For readability
+
+    # Step 2: Process the task based on priority using match case
+    match priority:
+        case "high":
+            message = f"'{task}' is a high priority task"
+        case "medium":
+            message = f"'{task}' is a medium priority task"
+        case "low":
+            message = f"'{task}' is a low priority task"
+        case _:
+            message = f"'{task}' has an unknown priority level"
+
+    # Step 3: Adjust message if the task is time-sensitive
+    if time_bound == "yes":
+        message += " that requires immediate attention today!"
+    else:
+        message += ". Consider completing it when you have free time."
+
+    # Step 4: Display the customized reminder
+    print("Reminder:", message)
