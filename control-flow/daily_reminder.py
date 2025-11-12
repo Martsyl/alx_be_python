@@ -1,6 +1,6 @@
-task = str(input("Enter the task you want to be reminded of daily: "))
-task_priority = str(input("Enter the priority level (High, Medium, Low): "))
-time_bound = str(input("Is the task time bound (yes, no): "))  
+task = input("Enter your task: ")
+priority = input("Priority (high/medium/low): ")
+time_bound = input("Is it time-bound? (yes/no): ") 
 
 match task_priority:
     case "High":
@@ -17,7 +17,7 @@ match task_priority:
         if time_bound == "yes":
             priority_message = f"'{task}' is a low priority task but has a time constraint."
         else:
-            priority_message = f"'{task}' is a low priority task. Consider completing it when you have free time."
+            priority_message = f"{task}' is a low priority task. Consider completing it when you have free time."
 
 
 print(priority_message)
