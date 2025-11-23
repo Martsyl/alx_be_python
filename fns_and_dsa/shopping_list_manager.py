@@ -12,10 +12,11 @@ def main():
         display_menu()
         choice = input("Enter your choice: ")
 
-        if choice == '1':
-            item = input("Enter item to add: ")
-            shopping_list.append(item)
-            print(f'Item "{item}" added to the shopping list.')
+        elif choice == '1':
+        item = input("Enter the item to add: ")
+        shopping_list.append(item)
+        print(f'Item "{item}" added to the shopping list.')
+
 
         elif choice == '2':
             item = input("Enter item to remove: ")
